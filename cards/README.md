@@ -8,6 +8,7 @@ This project
     - deal()
     - toString()
     - saveToFile()
+    - newDeckFromFile()
 
 ## Go Approach
 - Declare a 'slice of strings' type and name it 'deck'
@@ -19,3 +20,5 @@ This project
     - deck.go
     - deck_test.go
 
+## Shuffle approach
+for each card in cards, generate a random number between 0 and [len(cards) -1] and swap the cards in corresponding indexes.

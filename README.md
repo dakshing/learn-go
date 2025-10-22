@@ -84,3 +84,7 @@ func (d deck) toString() string {
 	return strings.Join([]string(d), ",")
 }
 ```
+
+### Swapping
+Swapping in Go is as simple as:
+`a, b = b, a`

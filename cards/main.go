@@ -19,4 +19,8 @@ func main() {
 	loadedDeck := newDeckFromFile("my_cards")
 	fmt.Println("Loaded deck from file:")
 	loadedDeck.print()
+
+	fmt.Println("Shuffling the deck:")
+	cards.shuffle()
+	cards.print()
 }
