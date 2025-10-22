@@ -88,3 +88,8 @@ func (d deck) toString() string {
 ### Swapping
 Swapping in Go is as simple as:
 `a, b = b, a`
+
+### Go Tests
+- Run tests using `go test`
+- Test files end with '_test.go'
+g
