@@ -92,4 +92,28 @@ Swapping in Go is as simple as:
 ### Go Tests
 - Run tests using `go test`
 - Test files end with '_test.go'
-g
+
+### Structs in Go
+- A simple struct declaration:
+```go
+type person struct {
+	firstName string
+	lastName  string
+}
+```
+- To print struct aling with the field names use formatting '%+v'.
+
+### Pointers
+- Receivers are copy of the original value, not reference.
+- Pointers are used to pass values by reference.
+- '&' is used to get the address of the variable.
+
+**_NOTE:_** Slice stores the **ptr to head** only. So updates will be retained.
+
+| Pass by Value Types | Pass by Reference Types |
+| --- | --- |
+| int | slices |
+| float | maps | 
+| string | channels | 
+| bool | pointers | 
+| structs | functions | 
