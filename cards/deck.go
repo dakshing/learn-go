@@ -34,9 +34,21 @@ func deal(d deck, handSize int) (deck, deck) { // returns two decks (go supports
 }
 
 func (d deck) toString() string {
-	return strings.Join([]string(d), ",")
+	return strings.Join([]string(d), ",") // type casting deck to []string
 }
 
 func (d deck) saveToFile(filename string) error { // Returns an error value
 	return os.WriteFile(filename, []byte(d.toString()), 0666) // 0666 is the file permission
+}
+
+func newDeckFromFile(filename string) deck {
+	bs, err := os.ReadFile(filename)
+	if err != nil {
+		// log the error and exit the program
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
+
+	s := strings.Split(string(bs), ",") // convert byte slice to string and split by comma
+	return deck(s)
 }

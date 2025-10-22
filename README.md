@@ -74,3 +74,13 @@ sb.WriteString("Building ")
 fmt.Println("Builder result:", sb.String())
 ```
 
+### Type Casting
+- Convert one type to another. Below code convert string slice to byte slice.
+`[]byte(strings.Join([]string{"one", "two", "three"}, ", "))`
+- Type declarations can freely be casted to parent type.
+```go
+type deck []string
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",")
+}
+```
