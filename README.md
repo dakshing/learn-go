@@ -43,9 +43,34 @@ arr := [3]string {"one", "two", "three"}
 slice := []string {"one", "two", "three"}
 slice = append(slice, "four", "five")
 
+// Range selector syntax
+slice[1:3] // Returns 1st and 2nd elements
+slice[:3]  // Returns first 3 elements
+
 for i, element := range slice {
     fmt.Println(i, element)
 }
 ```
 
 **_NOTE:_** Go is not an object-oriented programming language like Java.
+
+### Function return values
+- Go supoorts mutiple return values
+- A return value can be ignored using '_' underscore variable during assignment
+
+### Useful String Utils from strings package
+- strings.Contains(s, substr string) bool
+- strings.Index(s, substr string) int
+- strings.Replace(s, old, new string, n int) string
+- strings.ToLower(s string) string
+- strings.ToUpper(s string) string
+- strings.Split(s, sep string) []string
+- strings.Join(elems []string, sep string) string
+- strings.Builder
+```go
+var sb strings.Builder
+sb.WriteString("String ")
+sb.WriteString("Building ")
+fmt.Println("Builder result:", sb.String())
+```
+
