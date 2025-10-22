@@ -5,6 +5,8 @@ This project
 - Deck class
     - print()
     - shuffle()
+    - deal()
+    - toString()
     - saveToFile()
 
 ## Go Approach

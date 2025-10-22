@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"strings"
+)
 
 type deck []string
 
@@ -23,4 +27,16 @@ func (d deck) print() { // receiver function - d is of type deck
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
+
+func deal(d deck, handSize int) (deck, deck) { // returns two decks (go supports multiple return values)
+	return d[:handSize], d[handSize:]
+}
+
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",")
+}
+
+func (d deck) saveToFile(filename string) error { // Returns an error value
+	return os.WriteFile(filename, []byte(d.toString()), 0666) // 0666 is the file permission
 }
