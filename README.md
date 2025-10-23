@@ -1,3 +1,9 @@
+### Why Go?
+- Focus on simplicity, clarity, scalability (inspired by Python)
+- High performance & focus on concurrency (inspired by C & C++)
+- Batteries included
+- Type-safety
+
 ### Go cmd Commands
 ```
 go build -> only compile
@@ -134,6 +140,41 @@ type ReadCloser interface {
 ```
 
 - Interface usage style in Go - [link](./interfaces/README.md)
+
+### Any type in Go
+```go
+func printAnything(a any) {
+	fmt.Println(a)
+}
+
+func printAnything(a interface{}) {
+	fmt.Println(a)
+}
+```
+- Now printAnything can take any type.
+```go
+func printAnything(a any) {
+	switch v := a.(type) {
+	case int:
+		fmt.Println("Integer:", v)
+	case string:
+		fmt.Println("String:", v)
+	case bool:
+		fmt.Println("Boolean:", v)
+	default:
+		fmt.Println("Unknown type")
+	}
+}
+```
+- A special switch to run based on type passed.
+
+### Generics in Go
+- Go supports generics but the allowed types must be specified. 'any' can also be an allowed type.
+```go
+func add[T int | float64](a, b T) T {
+	return a + b
+}
+```
 
 ### Go Routines (Concurrency in Go)
 - Like Virtual threads in Java. Light-weight threads that are used to achieve concurrency.
