@@ -89,6 +89,9 @@ func (d deck) toString() string {
 Swapping in Go is as simple as:
 `a, b = b, a`
 
+### Access Commnad Line arguments
+- Command line arguments can be accessed using `os.Args[1]`
+
 ### Go Tests
 - Run tests using `go test`
 - Test files end with '_test.go'
@@ -132,3 +135,15 @@ type ReadCloser interface {
 ```
 
 - Interface usage style in Go - [link](./interfaces/README.md)
+
+### Go Routines (Concurrency in Go)
+- Like Virtual threads in Java. Light-weight threads that are used to achieve concurrency.
+- Main function is Main routine.
+- Uses Channels to communicate across go routines, whereas Java communicates using shared variables and locks.
+
+### Channels
+- A channel can be created by `c := make(chan string)` 
+- Input to channel is by `c <- 5`
+- Output value in channel by `<-c`
+- Block the caller for routines to execute by block them using channels (<-c)
+
