@@ -117,3 +117,18 @@ type person struct {
 | string | channels | 
 | bool | pointers | 
 | structs | functions | 
+
+### Interfaces
+- A special type keyword - 'interface'
+- Implicit implementation - there is no 'implements'. If all the methods in the interface are defined for a type, then the type becomes honorary member of the interface.
+- Go does not have generic types
+- Go does not allow overloading (complains functions with same name)
+- Interfaces can be used within interfaces and structs
+```go
+type ReadCloser interface {
+    Reader // another interface
+    Closed // another interface
+}
+```
+
+- Interface usage style in Go - [link](./interfaces/README.md)
